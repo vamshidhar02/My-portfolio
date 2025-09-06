@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Mail, Phone, Linkedin, Github, MapPin, Download, ExternalLink, Calendar, Award, Code, Briefcase, GraduationCap, User, ChevronDown, Menu, X } from 'lucide-react';
-
+import resumePDF from "./assets/Vamshidhar_Reddy_Resume.pdf";
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,6 +61,13 @@ const Portfolio = () => {
     setActiveSection(sectionId);
     setIsMenuOpen(false);
   };
+
+ const downloadResume = () => {
+  const link = document.createElement('a');
+  link.href = resumePDF;
+  link.download = 'Vamshidhar_Reddy_Resume.pdf';
+  link.click();
+};
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -150,7 +157,10 @@ const Portfolio = () => {
             >
               Get In Touch
             </button>
-            <button className="border border-gray-600 hover:border-gray-400 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-800 flex items-center justify-center gap-2">
+            <button 
+              onClick={downloadResume}
+              className="border border-gray-600 hover:border-gray-400 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-800 flex items-center justify-center gap-2"
+            >
               <Download size={18} />
               Download Resume
             </button>
