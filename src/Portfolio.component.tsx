@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, Phone, Linkedin, Github, MapPin, Download, ExternalLink, Calendar, Award, Code, Briefcase, GraduationCap, User, ChevronDown, Menu, X } from 'lucide-react';
 import resumePDF from "./assets/Vamshidhar_Reddy_Resume.pdf";
 const Portfolio = () => {
@@ -69,27 +69,27 @@ const Portfolio = () => {
   link.click();
 };
 
+
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
-        <div className="max-w-6xl mx-auto px-4 py-4">
+        <div className=" mx-auto px-6 py-4 ">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               VR
             </h1>
-            
+
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               {['home', 'about', 'experience', 'skills', 'achievements', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`capitalize transition-colors duration-200 ${
-                    activeSection === section 
-                      ? 'text-blue-400' 
-                      : 'text-gray-300 hover:text-white'
-                  }`}
+                  className={`capitalize transition-colors duration-200 ${activeSection === section
+                    ? 'text-blue-400'
+                    : 'text-gray-300 hover:text-white'
+                    }`}
                 >
                   {section}
                 </button>
@@ -127,29 +127,29 @@ const Portfolio = () => {
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center px-4">
         <div className="text-center max-w-4xl mx-auto">
-          <div className="mb-8 relative">
+          <div className="mb-8 relative mt-16">
             <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
               <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
                 <span className="text-4xl font-bold text-white">VR</span>
               </div>
             </div>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Vamshidhar Reddy
             </span>
           </h1>
-          
+
           <h2 className="text-2xl md:text-3xl text-gray-300 mb-8">
             Software Developer
           </h2>
-          
+
           <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Experienced developer with 2+ years in React.js and TypeScript, delivering scalable web applications 
+            Experienced developer with 2+ years in React.js and TypeScript, delivering scalable web applications
             for industrial domains with focus on real-time systems and performance optimization.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button
               onClick={() => scrollToSection('contact')}
@@ -157,9 +157,9 @@ const Portfolio = () => {
             >
               Get In Touch
             </button>
-            <button 
+            <button
               onClick={downloadResume}
-              className="border border-gray-600 hover:border-gray-400 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-800 flex items-center justify-center gap-2"
+              className=" text-gray-400 border border-gray-600 hover:border-gray-400 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-white/20 flex items-center justify-center gap-2"
             >
               <Download size={18} />
               Download Resume
@@ -185,15 +185,16 @@ const Portfolio = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700 shadow-xl">
-                <User className="text-blue-400 mb-4" size={32} />
-                <h3 className="text-2xl font-bold mb-4 text-white">Professional Journey</h3>
+                <div className='flex gap-4 items-center'>                <User className="text-blue-400 mb-4" size={32} />
+                  <h3 className="text-2xl font-bold mb-4 text-white">Professional Journey</h3></div>
+
                 <p className="text-gray-300 leading-relaxed mb-6">
-                  I'm a passionate software developer with over 2 years of experience building scalable web applications. 
-                  My expertise lies in React.js and TypeScript, with a strong focus on creating efficient, user-centric solutions 
+                  I'm a passionate software developer with over 2 years of experience building scalable web applications.
+                  My expertise lies in React.js and TypeScript, with a strong focus on creating efficient, user-centric solutions
                   for complex industrial domains including metals, oil, and gas industries.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  I thrive on solving challenging problems, optimizing performance, and creating seamless user experiences 
+                  I thrive on solving challenging problems, optimizing performance, and creating seamless user experiences
                   that drive business value and operational efficiency.
                 </p>
               </div>
@@ -261,7 +262,7 @@ const Portfolio = () => {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="space-y-3">
                   {job.achievements.map((achievement, idx) => (
                     <div key={idx} className="flex items-start gap-3">
@@ -288,8 +289,11 @@ const Portfolio = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-slate-600">
-              <Code className="text-blue-400 mb-4" size={32} />
-              <h3 className="text-xl font-bold mb-6 text-white">Languages</h3>
+              <div className='flex gap-4 items-center'>
+                <Code className="text-blue-400 mb-4" size={32} />
+                <h3 className="text-xl font-bold mb-6 text-white">Languages</h3>
+              </div>
+
               <div className="flex flex-wrap gap-2">
                 {skills.languages.map((skill, index) => (
                   <span key={index} className="bg-blue-600/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-600/30">
@@ -300,8 +304,10 @@ const Portfolio = () => {
             </div>
 
             <div className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-slate-600">
-              <Code className="text-purple-400 mb-4" size={32} />
-              <h3 className="text-xl font-bold mb-6 text-white">Frameworks & Libraries</h3>
+              <div className='flex gap-4 items-center'>
+                <Code className="text-purple-400 mb-4" size={32} />
+                <h3 className="text-xl font-bold mb-6 text-white">Frameworks & Libraries</h3>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {skills.frameworks.map((skill, index) => (
                   <span key={index} className="bg-purple-600/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-600/30">
@@ -312,8 +318,9 @@ const Portfolio = () => {
             </div>
 
             <div className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-slate-600">
-              <Code className="text-green-400 mb-4" size={32} />
-              <h3 className="text-xl font-bold mb-6 text-white">Developer Tools</h3>
+              <div className='flex gap-4 items-center'>              <Code className="text-green-400 mb-4" size={32} />
+                <h3 className="text-xl font-bold mb-6 text-white">Developer Tools</h3></div>
+
               <div className="flex flex-wrap gap-2">
                 {skills.tools.map((skill, index) => (
                   <span key={index} className="bg-green-600/20 text-green-300 px-3 py-1 rounded-full text-sm border border-green-600/30">
@@ -362,7 +369,7 @@ const Portfolio = () => {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <Mail className="text-blue-400" size={24} />
-                  <div>
+                  <div className='flex flex-col items-start'>
                     <p className="text-gray-400 text-sm">Email</p>
                     <a href="mailto:vamshidhar.reddy1125@gmail.com" className="text-white hover:text-blue-400 transition-colors">
                       vamshidhar.reddy1125@gmail.com
@@ -372,7 +379,7 @@ const Portfolio = () => {
 
                 <div className="flex items-center gap-4">
                   <Phone className="text-green-400" size={24} />
-                  <div>
+                  <div className='flex flex-col items-start'>
                     <p className="text-gray-400 text-sm">Phone</p>
                     <a href="tel:+918106560624" className="text-white hover:text-green-400 transition-colors">
                       +91 8106560624
@@ -382,11 +389,11 @@ const Portfolio = () => {
 
                 <div className="flex items-center gap-4">
                   <Linkedin className="text-blue-400" size={24} />
-                  <div>
+                  <div className='flex flex-col items-start'>
                     <p className="text-gray-400 text-sm">LinkedIn</p>
-                    <a 
-                      href="https://linkedin.com/in/vamshidhar-reddy-gudupalli" 
-                      target="_blank" 
+                    <a
+                      href="https://linkedin.com/in/vamshidhar-reddy-gudupalli"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-white hover:text-blue-400 transition-colors flex items-center gap-1"
                     >
@@ -398,11 +405,11 @@ const Portfolio = () => {
 
                 <div className="flex items-center gap-4">
                   <Github className="text-purple-400" size={24} />
-                  <div>
+                  <div className='flex flex-col items-start'>
                     <p className="text-gray-400 text-sm">GitHub</p>
-                    <a 
-                      href="https://github.com/vamshidhar" 
-                      target="_blank" 
+                    <a
+                      href="https://github.com/vamshidhar"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-white hover:text-purple-400 transition-colors flex items-center gap-1"
                     >
@@ -416,12 +423,24 @@ const Portfolio = () => {
               <div className="flex flex-col justify-center">
                 <h3 className="text-2xl font-bold mb-4 text-white">Ready to collaborate?</h3>
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  I'm always open to discussing new opportunities, interesting projects, 
+                  I'm always open to discussing new opportunities, interesting projects,
                   or just having a chat about technology and innovation.
                 </p>
-                <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Send Message
-                </button>
+                
+
+
+                {/* Option 2: WhatsApp link (uncomment to use) */}
+                
+                <a 
+                  href="https://wa.me/918106560624?text=Hi%20Vamshidhar,%20I'd%20like%20to%20discuss%20a%20potential%20opportunity%20with%20you."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-center block text-white no-underline"
+                >
+                  Send Message via WhatsApp
+                </a>
+               
+
               </div>
             </div>
           </div>
